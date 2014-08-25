@@ -1,0 +1,22 @@
+{
+  "name": "esx-transpile",
+  "version": "0.0.0",
+  "description": "Transpile ES6 (harmony) modules to ES5.",
+  "author": "Marko Durkovic <marko@miding.de> (https://github.com/durko)",
+  "license": "MIT",
+  "dependencies": {
+    "esx-bundle": "~0.0.1"
+  },
+  "devDependencies": {
+    "esprima": "git://github.com/esnext/esprima#harmony-esnext",
+    "recast": "~0.7.0"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/durko/esx-transpile"
+  },
+  "scripts": {
+    "test": "mocha"
+  }
+}
