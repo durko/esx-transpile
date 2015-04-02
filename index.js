@@ -278,7 +278,7 @@ module.exports.transpileAST = function transpileAST(ast) {
                 ast = prefixvar(ast, t.id.name, "__exports__", t.id.name);
             } else if (node.specifiers && node.specifiers.length > 0) {
                 // remove node
-                ast.body.splice(i, 1);
+                ast.body.splice(i--, 1);
 
                 if (node.source) {
                     // `export { foo, bar } from "library"`
@@ -292,7 +292,7 @@ module.exports.transpileAST = function transpileAST(ast) {
                         name = spec.name ? spec.name.name : spec.id.name;
 
                         ast.body.splice(
-                            i++,
+                            ++i,
                             0,
                             newAssignmentExpressionStatement(
                                 newMemberExpression("__exports__", name),
@@ -309,7 +309,7 @@ module.exports.transpileAST = function transpileAST(ast) {
                         if (spec.id.type === "MemberExpression" &&
                                 /__uDep/.test(spec.id.object.name)) {
                             ast.body.splice(
-                                i++,
+                                ++i,
                                 0,
                                 newAssignmentExpressionStatement(
                                     newMemberExpression(
