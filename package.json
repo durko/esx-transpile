@@ -1,6 +1,6 @@
 {
   "name": "esx-transpile",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Transpile ES6 (harmony) modules to ES5.",
   "author": "Marko Durkovic <marko@miding.de> (https://github.com/durko)",
   "license": "MIT",
